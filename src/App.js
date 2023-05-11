@@ -16,6 +16,13 @@ function App() {
      </div>
 
      <div className="cal-cart">
+        <div className="person">
+          <div><img src="" alt="" srcset="" /></div>
+          <div>
+            <h3>name</h3>
+            <p>Title</p>
+          </div>
+      </div>
 
      </div>
     </div>
