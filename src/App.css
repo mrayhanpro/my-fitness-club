@@ -1,20 +1,44 @@
-.App {
-  text-align: center;
-}
 .App{
+  text-align: center;
   display: grid;
   grid-template-columns: 6fr 2fr;
 }
 
-.exercise-cont {
+.exercise-data-cont {
    background-color: antiquewhite;
    border-right: 1px solid black;
 }
 
-.exercise-card-cont {
-  background-color: rgb(197, 168, 125);
-}
-
 .cal-cart {
   background-color: rgb(228, 227, 222);
+}
+.member-data {
+  display: flex;
+  align-items: center;
+  background-color: bisque;
+}
+.break-data {
+  background-color: azure;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.exercise-details {
+  background-color: rgb(121, 93, 93);
+}
+.exercise-time-data {
+  background-color: thistle;
+  display: flex;
+  
+}
+.break-time-data {
+  background-color: steelblue;
+  display: flex;
+}
+.activity-done-btn {
+  background-color: aqua;
+  color: black;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
 }

@@ -4,7 +4,7 @@ import './Exercise.css';
 const Exercise = () => {
     return (
         <div className='exercise-card'>
-        <img src="" alt="" srcset="" />
+        <img src="" alt="" />
         <h4>exercise</h4>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, dicta?</p>
         <p>for age: </p>

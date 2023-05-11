@@ -1,0 +1,6 @@
+.exercise-cont {
+    background-color: rgb(142, 175, 175);
+}
+.exercise-cont > h1 {
+ color: wheat;
+}
