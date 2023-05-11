@@ -1,0 +1,18 @@
+.header {
+    display: flex;  
+    padding: 5px;
+    align-items: center;
+
+}
+.company-logo > img{
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+
+.company-name{
+    color: crimson;
+    font-weight: bold;
+   margin-left: 10px;
+   font-size: 30px;
+}

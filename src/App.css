@@ -7,7 +7,12 @@
 }
 
 .exercise-cont {
-  background-color: yellow;
+   background-color: antiquewhite;
+   border-right: 1px solid black;
+}
+
+.exercise-card-cont {
+  background-color: rgb(197, 168, 125);
 }
 
 .cal-cart {
