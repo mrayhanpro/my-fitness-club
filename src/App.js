@@ -3,11 +3,15 @@ import { useEffect } from 'react';
 import './App.css';
 import ExerciseCont from './components/Exercise-cont/ExerciseCont';
 import Header from './components/Header/Header';
+import fackData from './fackData.json'
 
 function App() {
 
   // load data
   useEffect(() => {
+    fetch(fackData)
+    .then(res => res.json())
+    .then(data => console.log(data))
 
   }, [])
 
