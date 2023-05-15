@@ -1,5 +1,5 @@
 import React from 'react';
-import './Exercise.css';
+import './Activity.css';
 
 const Exercise = () => {
     return (

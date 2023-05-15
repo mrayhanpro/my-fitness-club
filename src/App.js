@@ -1,19 +1,20 @@
-
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
-import ExerciseCont from './components/Exercise-cont/ExerciseCont';
+import ExerciseCont from './components/Activity-cont/ActivityCont';
 import Header from './components/Header/Header';
-import fackData from './fackData.json'
 
 function App() {
+  const [activity, setActivity] = useState([])
 
   // load data
   useEffect(() => {
-    fetch(fackData)
+    fetch("fakeData.json")
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => setActivity(data))
 
   }, [])
+
+  console.log(activity);
 
   return (
     <div className="App">

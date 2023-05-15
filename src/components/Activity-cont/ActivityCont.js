@@ -1,6 +1,6 @@
 import React from 'react';
-import './ExerciseCont.css';
-import Exercise from '../Exercise/Exercise';
+import './ActivityCont.css';
+import Activity from '../Activity/Activity';
 
 
 
@@ -8,7 +8,7 @@ const ExerciseCont = () => {
     return (
         <div className='exercise-cont'>
              <h3> Select today's exercise:</h3>
-             <Exercise></Exercise>
+             <Activity></Activity>
         </div>
     );
 };
