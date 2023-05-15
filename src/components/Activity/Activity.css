@@ -1,7 +1,13 @@
-.exercise-card {
+.activity-card {
+    background-color: #E7D9EA;
     border: 1px solid black;
     border-radius: 10px;
-    width: 200px;
-    height: 300px;
+    width: 250px;
+    height: 350px;
+    padding: 20px;
 
+}
+
+.activity-card:hover {
+    outline: 2px solid crimson;
 }

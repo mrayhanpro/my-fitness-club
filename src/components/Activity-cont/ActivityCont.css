@@ -1,6 +1,10 @@
-.exercise-cont {
-    background-color: rgb(142, 175, 175);
+.activity-cont {
+    background-color: #1B9C85;
+    padding: 20px;
+    display: grid;
+    grid-template-columns:  auto auto auto;
+    gap: 30px;
 }
-.exercise-cont > h1 {
+.activity-cont > h1 {
  color: wheat;
 }

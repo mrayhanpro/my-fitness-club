@@ -4,13 +4,15 @@ import Activity from '../Activity/Activity';
 
 
 
-const ExerciseCont = () => {
+const ActivityCont = ({activities}) => {
+
+
+
     return (
-        <div className='exercise-cont'>
-             <h3> Select today's exercise:</h3>
-             <Activity></Activity>
+        <div className='activity-cont'>
+            {activities.map(activity => <Activity key={activity.id} activity = {activity}></Activity>)}
         </div>
     );
 };
 
-export default ExerciseCont;
+export default ActivityCont;

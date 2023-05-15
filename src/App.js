@@ -1,26 +1,28 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import ExerciseCont from './components/Activity-cont/ActivityCont';
+import ActivityCont from './components/Activity-cont/ActivityCont';
 import Header from './components/Header/Header';
+import ActivityContHeader from './components/ActivityContHeader/ActivityContHeader';
 
 function App() {
-  const [activity, setActivity] = useState([])
+  const [activities, setActivities] = useState([])
 
   // load data
   useEffect(() => {
     fetch("fakeData.json")
     .then(res => res.json())
-    .then(data => setActivity(data))
+    .then(data => setActivities(data))
 
   }, [])
 
-  console.log(activity);
+  console.log(activities);
 
   return (
     <div className="App">
      <div className="exercise-data-cont">
         <Header></Header> 
-        <ExerciseCont></ExerciseCont>
+        <ActivityContHeader></ActivityContHeader>
+        <ActivityCont activities ={activities}></ActivityCont>
      </div>
 
      <div className="cal-cart">
@@ -59,6 +61,7 @@ function App() {
                   <p>Lorem ipsum dolor sit.</p>
                   <p>13xxxxx</p>
                 </div>
+                <br />
                 <div className='break-time-data'>
                   <p>Lorem ipsum dolor sit amet.</p>
                   <p>123xxxxx</p>
