@@ -3,20 +3,20 @@ import './App.css';
 import ActivityCont from './components/Activity-cont/ActivityCont';
 import Header from './components/Header/Header';
 import ActivityContHeader from './components/ActivityContHeader/ActivityContHeader';
+import activities from './fakeData.json';
 
 function App() {
-  const [activities, setActivities] = useState([])
+  // const [activities, setActivities] = useState([])
+  // // load data
+  // useEffect(() => {
+  //   fetch(fakeData)
+  //   .then(res => res.json())
+  //   .then(data => setActivities(data))
 
-  // load data
-  useEffect(() => {
-    fetch("fakeData.json")
-    .then(res => res.json())
-    .then(data => setActivities(data))
+  // }, [])
+  // console.log(activities);
 
-  }, [])
-
-  console.log(activities);
-
+  
   return (
     <div className="App">
      <div className="exercise-data-cont">
@@ -76,4 +76,6 @@ function App() {
   );
 }
 
-export default App;
+export default App ;
+
+

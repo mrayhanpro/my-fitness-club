@@ -1,13 +1,49 @@
 .activity-card {
-    background-color: #E7D9EA;
+    background-image: url(../../../public/Images/activity-cont-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     border: 1px solid black;
     border-radius: 10px;
     width: 250px;
-    height: 350px;
-    padding: 20px;
+    height: 400px;
+    padding: 10px;
+    color: white;
+    box-shadow: 1px -1px 20px 5px  white;
 
+}
+.activity-card img {
+    width: 250px;
+    height: 150px;
+    border-radius: 5px;
+}
+.activity-card h4 {
+    background-color: rgb(160, 36, 60);
+    margin: 0;
+    padding: 5px;
+    padding-left: 10px;
+    text-align: left;
+    border-radius: 5px;
+}
+
+.activity-card .activity-details {
+    font-size: 15px;
+    text-align: left;
+    color: black;
+    font-weight: bold;
+    line-height: 15px;
+}
+.activity-card button {
+    color: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: rgb(160, 36, 60);
+    outline: none;
+}
+.activity-card button:hover {
+  background-color: #394ae6;
 }
 
 .activity-card:hover {
-    outline: 2px solid crimson;
+    /* outline: 2px solid crimson; */
 }

@@ -1,7 +1,8 @@
 .App{
   text-align: center;
   display: grid;
-  grid-template-columns: 6fr 2fr;
+  grid-template-columns: 8fr 2fr;
+
 }
 
 .exercise-data-cont {
@@ -11,24 +12,29 @@
 
 .cal-cart {
   padding: 20px;
-  background-color: #11698E;
+  background-image: url(../public/Images/bg.jpg);
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 18%;
 }
 .member-data {
-  border-radius: 10px;
-  padding: 0 10px 0 10px;
+  border-radius: 5px;
+  padding: 0 5px 0 5px;
   display: grid;
   grid-template-columns: auto auto auto;
   background-color: bisque;
 }
 .break-data {
   border-radius: 10px;
-  padding: 10px;
+  padding: 5px;
   background-color: azure;
   display: grid;
   grid-template-columns: auto auto auto auto auto;
 }
 .exercise-details {
-  padding: 10px;
+  padding: 5px;
   border-radius: 10px;
 }
 .exercise-time-data {
@@ -39,7 +45,7 @@
   
 }
 .break-time-data {
-  padding: 10px;
+  padding: 5px;
   background-color: rgb(66, 137, 195);
   display: flex;
 }

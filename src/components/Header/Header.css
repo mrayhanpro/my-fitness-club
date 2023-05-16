@@ -1,8 +1,11 @@
 .header {
     display: flex;  
     align-items: center;
-    background-color: #146C94;
+    background-image: url(../../../public/Images/bg.jpg);
+    background-size: cover;
     padding-bottom: 10px;
+    position: sticky;
+    top: 0;
 }
 .company-logo > img{
     margin-top: 10px;
@@ -12,7 +15,7 @@
 }
 
 .company-name{
-    color: white;
+    color: rgb(217, 10, 51);
     font-weight: bold;
     margin-left: 10px;
     font-size: 20px;

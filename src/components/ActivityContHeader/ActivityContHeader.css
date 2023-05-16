@@ -1,5 +1,8 @@
 .activity-cont-header h4 {
-    background-color: rgb(243, 193, 128);
+    background-image: url(../../../public/Images/swimming.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: 0;
     padding: 10px;
+    font-size: 20px;
 }

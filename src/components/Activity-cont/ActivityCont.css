@@ -1,5 +1,6 @@
 .activity-cont {
-    background-color: #1B9C85;
+   background-image: url(../../../public/Images/ac-bg3.png);
+   background-size: cover;
     padding: 20px;
     display: grid;
     grid-template-columns:  auto auto auto;
