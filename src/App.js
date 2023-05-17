@@ -8,7 +8,8 @@ import man from './man.jpg';
 
 function App() {
 
-  // const [activities, setActivities] = useState([])
+  const [activityData, setActivityData] = useState([]);
+  const {time_require} = activityData;
   // // load data
   // useEffect(() => {
   //   fetch(fakeData)
@@ -18,8 +19,9 @@ function App() {
   // }, [])
   // console.log(activities);
 
-  const handleAddToList = ({activity}) => {
-    return console.log(activity);
+  const handleAddToList = (activity) => {
+    // const newActivity = [...activityData, activity];
+    setActivityData(activity)
   }
 
   
@@ -69,12 +71,12 @@ function App() {
           <div className="activity-details">
                 <div className='activity-time-data'>
                   <p>Exercise time:</p>
-                  <p>0</p>
+                  <p  className='time'>{time_require} Minutes</p>
                 </div>
                 <br />
                 <div className='break-time-data'>
                   <p> Break time:</p>
-                  <p>0</p>
+                  <p id='break-time' className='time'>0 Minutes</p>
                 </div>
           </div>
 
