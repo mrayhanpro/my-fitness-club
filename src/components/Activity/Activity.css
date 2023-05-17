@@ -8,8 +8,11 @@
     height: 400px;
     padding: 10px;
     color: white;
-    box-shadow: 1px -1px 20px 5px  white;
+    box-shadow: 1px -1px 5px 5px rgb(54, 54, 135);
 
+}
+.activity-card:hover {
+    outline: 1px solid red;
 }
 .activity-card img {
     width: 250px;

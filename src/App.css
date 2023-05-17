@@ -1,39 +1,35 @@
 .App{
   text-align: center;
   display: grid;
-  grid-template-columns: 5fr 2fr;
-
-}
-
-.exercise-data-cont {
-   background-color: antiquewhite;
-   border-right: 1px solid black;
+  grid-template-columns: 6.4fr 2fr;
+  justify-content: space-around;
 }
 
 .cal-cart {
   padding: 20px;
   background-image: url(../public/Images/bg.jpg);
   background-size: cover;
-  position: sticky;
+  position: fixed;
   top: 0;
   right: 0;
-  height: 100%;
+
 
 }
-/* .member {
- 
-    
-} */
+
+/* Setting style for the img */
 .member div img {
-  width: 120px;
-  height: 100px;
+  width: 100px;
+  height: 80px;
   border-radius: 10px;
 
 }
+
+/* Setting style for the name and tittle */
 .name-n-tittle {
   line-height: 0px;
 }
 
+/* Setting style for the member related data */
 .member-data {
   margin-top: 10px;
   border-radius: 5px;
@@ -56,35 +52,42 @@
   
 }
 
+
+/* Setting style for the break section */
+
 .break-section-header, .exercise-details {
   text-align: left;
 }
 
 .break-data {
-  padding: 0 10px 0;
   border-radius: 10px;
   display: grid;
   grid-template-columns: auto auto auto;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+
+
   
-}
-.break-data p {
-  text-align: center;
 }
 
 .break-data * {
-  width: 40px;
-  height: 40px;
+  height: 35px;
   border-radius: 50%;
   border: 1px solid black;
   padding: 10px;
   font-weight: bold ;
-  background-color: aqua;
-  box-shadow: 1px -1px 20 px 1px red;
- 
-
+  background-color: azure;
+  box-shadow: 1px -1px 20px 1px red;
+  
+  
 }
+.break-data p {
+  color: crimson;
+  padding-top: 15px;
+  width: 40px;  
+}
+
+
 .exercise-details {
   padding: 5px;
   border-radius: 10px;

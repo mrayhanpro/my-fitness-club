@@ -5,6 +5,9 @@
     display: grid;
     grid-template-columns:  auto auto auto;
     gap: 30px;
+    justify-content: center;
+    align-items: center;
+
 }
 .activity-cont > h1 {
  color: wheat;
