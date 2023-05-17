@@ -1,7 +1,7 @@
 .App{
   text-align: center;
   display: grid;
-  grid-template-columns: 6.4fr 2fr;
+  grid-template-columns: 7fr 2fr;
   justify-content: space-around;
 }
 
@@ -12,6 +12,9 @@
   position: fixed;
   top: 0;
   right: 0;
+  width: 260px;
+  height: 100%;
+  border-left: 3px solid rgb(54, 54, 135);
 
 
 }
@@ -21,6 +24,7 @@
   width: 100px;
   height: 80px;
   border-radius: 10px;
+  border: 1px solid red;
 
 }
 
@@ -42,21 +46,24 @@
 
 }
 .member-data div {
-  line-height: 5px;
-  width: 70px;
-  height: 70px;
-  border: 1px solid black;
+  line-height: 2px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid crimson;
   background-color: rgb(231, 236, 236);
-  box-shadow: 1px -1px 20 px 1px red;
-  border-radius: 10px;
+  box-shadow: 1px -1px 10px 1px black;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
   
 }
 
 
 /* Setting style for the break section */
 
-.break-section-header, .exercise-details {
+.break-section-header, .activity-details {
   text-align: left;
+  line-height: 8px;
 }
 
 .break-data {
@@ -65,52 +72,59 @@
   grid-template-columns: auto auto auto;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 
-
-  
 }
 
 .break-data * {
   height: 35px;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid crimson;
   padding: 10px;
   font-weight: bold ;
-  background-color: azure;
-  box-shadow: 1px -1px 20px 1px red;
+  background-color: thistle;
+  box-shadow: 1px -1px 10px 1px black;
+  margin: 0;
   
   
 }
 .break-data p {
-  color: crimson;
   padding-top: 15px;
-  width: 40px;  
+  width: 40px; 
+  font-size: 14px; 
 }
 
+/* Style for activity details section */
 
-.exercise-details {
-  padding: 5px;
-  border-radius: 10px;
-}
-.exercise-time-data {
-  padding: 10px;
+.activity-time-data, .break-time-data {
   background-color: thistle;
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: auto auto;
   justify-content: space-around;
   align-items: center;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: 1px -1px 10px 1px black;
+  border: 1px solid crimson;
+
+
+
   
 }
-.break-time-data {
-  padding: 5px;
-  background-color: rgb(66, 137, 195);
-  display: flex;
-}
+
+/* Style for the activity button */
 .activity-done-btn {
-  background-color: rgb(3, 150, 150);
-  color: black;
+  background-color: green;
+  color: white;
   font-weight: bold;
   padding: 10px 20px;
   border-radius: 10px;
   margin: 15px;
+  box-shadow: 1px -1px 10px 1px black;
+
+}
+
+.activity-done-btn:hover {
+  color: blue;
+  outline: 1px solid blue;
 }

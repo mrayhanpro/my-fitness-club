@@ -7,6 +7,7 @@ import activities from './fakeData.json';
 import man from './man.jpg';
 
 function App() {
+
   // const [activities, setActivities] = useState([])
   // // load data
   // useEffect(() => {
@@ -17,13 +18,20 @@ function App() {
   // }, [])
   // console.log(activities);
 
+  const handleAddToList = ({activity}) => {
+    return console.log(activity);
+  }
+
   
   return (
     <div className="App">
      <div className="exercise-data-cont">
         <Header></Header> 
         <ActivityContHeader></ActivityContHeader>
-        <ActivityCont activities ={activities}></ActivityCont>
+        <ActivityCont
+          activities ={activities} 
+          handleAddToList={handleAddToList}
+         ></ActivityCont>
      </div>
 
      <div className="cal-cart">
@@ -50,23 +58,23 @@ function App() {
           </div>
           <h3 className='break-section-header'>Add a break</h3>
           <div className='break-data'>
-                <p>5min</p>
+                <p>05min</p>
                 <p>10min</p>
                 <p>15min</p>
                 <p>20min</p>
                 <p>25min</p>
                 <p>30min</p>
           </div>
-              <h3 className='exercise-details'>Exercise details:</h3>
-          <div className="exercise-details">
-                <div className='exercise-time-data'>
-                  <p>Lorem ipsum dolor sit.</p>
-                  <p>13xxxxx</p>
+              <h3 className='activity-details'>Exercise details:</h3>
+          <div className="activity-details">
+                <div className='activity-time-data'>
+                  <p>Exercise time:</p>
+                  <p>0</p>
                 </div>
                 <br />
                 <div className='break-time-data'>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                  <p>123xxxxx</p>
+                  <p> Break time:</p>
+                  <p>0</p>
                 </div>
           </div>
 
