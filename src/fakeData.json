@@ -5,7 +5,7 @@
     "activity_name" : "Swimming",
     "activity_detail": "Swimming is one of the most effective physical activity. It's good for whole body. ",
     "for_age": "10-anyone",
-    "time_require": "30"
+    "time_require": "30 Min"
    
     },
   {
@@ -14,7 +14,7 @@
     "activity_name" : "Running",
     "activity_detail": "Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot.",
     "for_age": "10-anyone",
-    "time_require": "45"
+    "time_require": "45 Min"
    
     },
   {
@@ -23,7 +23,7 @@
     "activity_name" : "Walking",
     "activity_detail": "Walking for 30 minutes a day or more on most days of the week is a great way to improve or maintain your overall health. ",
     "for_age": "10-anyone",
-    "time_require": "20"
+    "time_require": "20 Min"
    
     },
   {
@@ -32,7 +32,7 @@
     "activity_name" : "Cycling",
     "activity_detail": "Cycling can help to protect you from serious diseases such as stroke, heart attack, some cancers, depression, diabetes, obesity and arthritis. ",
     "for_age": "10-anyone",
-    "time_require": "60"
+    "time_require": "60 Min"
    
     },
   {
@@ -41,7 +41,7 @@
     "activity_name" : "Dancing",
     "activity_detail": "Dancing is a whole-body workout that's actually fun. It's good for your heart, it makes you stronger, and it can help with balance and coordination. ",
     "for_age": "10-anyone",
-    "time_require": "20"
+    "time_require": "20 Min"
    
     },
   {
@@ -50,7 +50,7 @@
     "activity_name" : "Freehand exercise",
     "activity_detail": "Free hand exercises are those exercises that are done without the help of any special equipment. These are also known as callisthenics.",
     "for_age": "10-anyone",
-    "time_require": "45"
+    "time_require": "45 Min"
    
     },
   {
@@ -59,7 +59,7 @@
     "activity_name" : "Gym workout",
     "activity_detail": "improve your brain health, help manage weight, reduce the risk of disease, strengthen bones and muscles, and improve your ability to do everyday activities ",
     "for_age": "15-anyone",
-    "time_require": "50"
+    "time_require": "50 Min"
    
     },
   {
@@ -68,7 +68,7 @@
     "activity_name" : "Yoga",
     "activity_detail": "It's a total mind-body workout that combines strengthening and stretching poses with deep breathing and meditation or relaxation. ",
     "for_age": "15-anyone",
-    "time_require": "40"
+    "time_require": "40 Min"
    
     },
   {
@@ -77,7 +77,7 @@
     "activity_name" : "Mountain climbing",
     "activity_detail": "Climbing is the activity of using one's hands, feet, or other parts of the body to ascend a steep topographical object that can range from the world's tallest mountains to small boulders. ",
     "for_age": "10-anyone",
-    "time_require": "70"
+    "time_require": "70 Min"
    
     },
   {
@@ -86,7 +86,7 @@
     "activity_name" : "Football",
     "activity_detail": "increased stamina. improved cardiovascular health. reduced body fat. improved muscle strength and tone.",
     "for_age": "15-anyone",
-    "time_require": "90"
+    "time_require": "90 Min"
    
     },
   {
@@ -95,7 +95,7 @@
     "activity_name" : "Tennis",
     "activity_detail": "improved aerobic fitness, a lower body fat percentage, a more favourable lipid profile, reduced risk for developing cardiovascular disease, and improved bone health. ",
     "for_age": "15-anyone",
-    "time_require": "60"
+    "time_require": "60 Min"
    
     }
 ]

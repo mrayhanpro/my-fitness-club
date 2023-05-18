@@ -5,14 +5,15 @@ const Activity = (props) => {
     const {activity, handleAddToList} = props;
     const {activity_name, activity_detail, for_age, time_require, picture} = activity;
 
-    const replace = () => {   
-        const element = document.getElementById('add-btn');
+    const replace = (id) => {  
+        console.log(id); 
+        const element = document.getElementById(id);
         console.log(element);
         element.innerText = "";
         element.innerText = "Addeded";
 
-        const activityElement = document.getElementById('add-btn');
-        activityElement.innerText = " "
+        // const activityElement = document.getElementById('add-btn');
+        // activityElement.innerText = " "
     }
 
     return (
@@ -24,10 +25,10 @@ const Activity = (props) => {
             <p>for age: {for_age} </p>
             <p>time required: {time_require} Minutes </p>
         </div>   
-            <button id='add-btn' onClick={
+            <button id='add-btn'  onClick={
                 () => {
                     handleAddToList(activity)
-                    replace()
+                    replace("add-btn")
                 }
             }>Add to list</button>
         </div>

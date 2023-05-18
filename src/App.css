@@ -96,12 +96,14 @@
 .break-data p {
   padding-top: 15px;
   width: 40px; 
-  font-size: 14px; 
+  font-size: 14px;
+  line-height: 13px; 
 }
+
 
 /* Style for activity details section */
 
-.activity-time-data, .break-time-data {
+.activity-time-data, .break-time-data , .activity-time-data {
   background-color: thistle;
   display: grid;
   grid-template-columns: auto auto;
@@ -116,6 +118,11 @@
 .time {
   color: rgb(78, 72, 72);
 }
+
+.total-time {
+  color: blue;
+}
+
 /* Style for the activity button */
 .activity-done-btn {
   background-color: green;
