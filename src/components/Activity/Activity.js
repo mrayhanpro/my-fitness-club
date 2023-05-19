@@ -11,9 +11,7 @@ const Activity = (props) => {
         console.log(element);
         element.innerText = "";
         element.innerText = "Addeded";
-
-        // const activityElement = document.getElementById('add-btn');
-        // activityElement.innerText = " "
+        
     }
 
     return (
