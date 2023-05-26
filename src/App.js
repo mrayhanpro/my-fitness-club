@@ -1,32 +1,36 @@
 import {useState } from 'react';
 import './App.css';
-import ActivityCont from './components/Activity-cont/ActivityCont';
 import Header from './components/Header/Header';
 import ActivityContHeader from './components/ActivityContHeader/ActivityContHeader';
-import activities from './fakeData.json';
+import ActivityCont from './components/Activity-cont/ActivityCont';
 import man from './man.jpg';
 
 function App() {
+  
+    // Set break time and its color:
+    const setBreakTime = (id) => {  
+  
+     
+      const getSelectedBreakTime = document.getElementById(id).innerText;
+     
+      document.getElementById(id).style.background = "red";
+      document.getElementById(id).style.color = "white";
+  
+      const breakTimeElementValue = document.getElementById('break-time');
+      breakTimeElementValue.innerText = "";
+      breakTimeElementValue.innerText = getSelectedBreakTime;
+      return  console.log(getSelectedBreakTime);;
+    }
 
   // Declaring the state for the activity dat:
   const [activityData, setActivityData] = useState([]);
+  console.log(activityData);
   const {time_require} = activityData;
 
   const handleAddToList = (activity) => {
     setActivityData(activity)
   }
 
-  // Set break time and its color:
-  const setBreakTime = (id) => {  
-    const getSelectedBreakTime = document.getElementById(id).innerText;
-    document.getElementById(id).style.background = "red";
-    document.getElementById(id).style.color = "white";
-
-    const breakTimeElementValue = document.getElementById('break-time');
-    breakTimeElementValue.innerText = "";
-    breakTimeElementValue.innerText = getSelectedBreakTime;
-    return  console.log(id);
-  }
 
 
   return (
@@ -37,7 +41,6 @@ function App() {
         <Header></Header> 
         <ActivityContHeader></ActivityContHeader>
         <ActivityCont
-            activities ={activities} 
             handleAddToList={handleAddToList}
          ></ActivityCont>
      </div>
@@ -70,19 +73,19 @@ function App() {
           {/* The break time section codes: */}
           <h3 className='break-section-header'>Add a break</h3>
           <div className='break-data'>
-                <p id={1} onClick={ () => setBreakTime(1)}>05 Min</p>
-                <p id={2} onClick={ () => setBreakTime(2)}>10 Min</p>
-                <p id={3} onClick={ () => setBreakTime(3)}>15 Min</p>
-                <p id={4} onClick={ () => setBreakTime(4)}>20 Min</p>
-                <p id={5} onClick={ () => setBreakTime(5)}>25 Min</p>
-                <p id={6} onClick={ () => setBreakTime(6)}>30 Min</p>
+                <p id='1' onClick={ () => setBreakTime('1')}>05 Min</p>
+                <p id='2' onClick={ () => setBreakTime('2')}>10 Min</p>
+                <p id='3' onClick={ () => setBreakTime('3')}>15 Min</p>
+                <p id='4' onClick={ () => setBreakTime('4')}>20 Min</p>
+                <p id='5' onClick={ () => setBreakTime('5')}>25 Min</p>
+                <p id='6' onClick={ () => setBreakTime('6')}>30 Min</p>
           </div>
 
           {/* The activity details section codes: */}
               <h3 className='activity-details-header'>Activity details:</h3>
           <div className="activity-details">
                 <div className='activity-time-data'>
-                  <p>Activity time:</p>
+                  <p>Required time:</p>
                   <p  className='time'>{time_require}</p>
                 </div>
                 <br />

@@ -1,11 +1,12 @@
 import React from 'react';
 import './ActivityCont.css';
+import activities from '../../fakeData.json';
 import Activity from '../Activity/Activity';
 
 
 
 const ActivityCont = (props) => {
-    const {activities, handleAddToList} = props;
+    const {handleAddToList} = props;
 
     return (
         <div className='activity-cont'>

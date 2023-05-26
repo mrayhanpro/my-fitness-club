@@ -11,9 +11,12 @@
     box-shadow: 1px -1px 5px 5px rgb(54, 54, 135);
 
 }
+
 .activity-card:hover {
     outline: 1px solid red;
 }
+
+
 .activity-card img {
     width: 250px;
     height: 150px;
@@ -45,8 +48,4 @@
 }
 .activity-card button:hover {
   background-color: #394ae6;
-}
-
-.activity-card:hover {
-    /* outline: 2px solid crimson; */
 }
