@@ -3,8 +3,6 @@ import './ActivityCont.css';
 import activities from '../../fakeData.json';
 import Activity from '../Activity/Activity';
 
-
-
 const ActivityCont = (props) => {
     const {handleAddToList} = props;
 

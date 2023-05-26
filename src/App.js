@@ -1,4 +1,4 @@
-import {useState } from 'react';
+import {useEffect, useState } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import ActivityContHeader from './components/ActivityContHeader/ActivityContHeader';
@@ -6,44 +6,45 @@ import ActivityCont from './components/Activity-cont/ActivityCont';
 import man from './man.jpg';
 
 function App() {
-  
-    // Set break time and its color:
-    const setBreakTime = (id) => {  
-  
-     
-      const getSelectedBreakTime = document.getElementById(id).innerText;
-     
-      document.getElementById(id).style.background = "red";
-      document.getElementById(id).style.color = "white";
-  
-      const breakTimeElementValue = document.getElementById('break-time');
-      breakTimeElementValue.innerText = "";
-      breakTimeElementValue.innerText = getSelectedBreakTime;
-      return  console.log(getSelectedBreakTime);;
-    }
+// Declaring the state for the activity details section:
+  const [requiredActivityTime, setRequiredActivityTime] = useState([]);
+  const [breakTime, setBreakTime] = useState([]);
 
-  // Declaring the state for the activity dat:
-  const [activityData, setActivityData] = useState([]);
-  console.log(activityData);
-  const {time_require} = activityData;
-
+//  for add to list button:
   const handleAddToList = (activity) => {
-    setActivityData(activity)
-  }
+    const newActivityData = [...requiredActivityTime, activity.time_require]
+    setRequiredActivityTime(newActivityData);
+}
 
+// Code for adding break time and its color:
+const addBreakTimeAndColor = (id) => {
+  const getSelectedBreakTimeElement = document.getElementById(id);
+  getSelectedBreakTimeElement.style.backgroundColor = 'blue'
+  getSelectedBreakTimeElement.style.color = 'white';
+  const SelectedBreakTime = document.getElementById(id).innerText;
+  const newBreaktime = [...breakTime, SelectedBreakTime];
+  setBreakTime(newBreaktime);
+}
 
+// Code for showing the greeting for completing selected activities:
+const showGreeting = (id) => {
+  const completeActivityBtn = document.getElementById(id);
+  completeActivityBtn.style.backgroundColor = 'rgb(185, 248, 91)'
+  completeActivityBtn.innerText = '';
+  completeActivityBtn.innerText = "Completed!😍";
+  return console.log("Ok");
+}
 
-  return (
+return (
 
     <div className="App">
-
-     <div className="activity-data-cont">
-        <Header></Header> 
-        <ActivityContHeader></ActivityContHeader>
-        <ActivityCont
-            handleAddToList={handleAddToList}
-         ></ActivityCont>
-     </div>
+      <div className="activity-data-cont">
+          <Header></Header> 
+          <ActivityContHeader></ActivityContHeader>
+          <ActivityCont
+              handleAddToList={handleAddToList}
+          ></ActivityCont>
+      </div>
 
 {/* The section of Calculation cart: */}
      <div className="cal-cart">
@@ -71,37 +72,46 @@ function App() {
           </div>
 
           {/* The break time section codes: */}
-          <h3 className='break-section-header'>Add a break</h3>
+          <h3 className='break-section-header'>Add a break (Min):</h3>
           <div className='break-data'>
-                <p id='1' onClick={ () => setBreakTime('1')}>05 Min</p>
-                <p id='2' onClick={ () => setBreakTime('2')}>10 Min</p>
-                <p id='3' onClick={ () => setBreakTime('3')}>15 Min</p>
-                <p id='4' onClick={ () => setBreakTime('4')}>20 Min</p>
-                <p id='5' onClick={ () => setBreakTime('5')}>25 Min</p>
-                <p id='6' onClick={ () => setBreakTime('6')}>30 Min</p>
+                <p id='a' onClick={() =>addBreakTimeAndColor('a')}> 05 </p>
+                <p id='b' onClick={() =>addBreakTimeAndColor('b')}> 10 </p>
+                <p id='c' onClick={() =>addBreakTimeAndColor("c")}> 15 </p>
+                <p id='d' onClick={() =>addBreakTimeAndColor('d')}> 20 </p>
+                <p id='e' onClick={() =>addBreakTimeAndColor('e')}> 25 </p>
+                <p id='f' onClick={() =>addBreakTimeAndColor('f')}> 30 </p>
           </div>
 
           {/* The activity details section codes: */}
               <h3 className='activity-details-header'>Activity details:</h3>
           <div className="activity-details">
-                <div className='activity-time-data'>
-                  <p>Required time:</p>
-                  <p  className='time'>{time_require}</p>
+                <div className='total-activity-time'>
+                  <p>Required time =</p>
+                  <p  className='time'><span id='required-activity-time'>{
+                  
+                         requiredActivityTime.reduce((p, c)=> +p + +c, 0)
+      
+                  }</span> Min</p>
                 </div>
                 <br />
-                <div className='break-time-data'>
-                  <p> Break time:</p>
-                  <p id='break-time' className='time'></p>
+                <div className='total-break-time'>
+                  <p> Break time =</p>
+                  <p  className='time'> <span id='break-time'>{
+                      breakTime.reduce((p, c) => +p + +c , 0)
+                  }</span> Min</p>
                 </div>
                 <br />
-                <div className='activity-time-data'>
-                  <p> <span className='total-time'>Total needed time</span>:</p>
-                  <p id='total-time' className='time'>0</p>
+                <div className='total-need-time'>
+                  <p> <span className='total-time-tittle'>Total needed time</span>: </p>
+                  <p className='time'><span id='total-time'> {
+                             requiredActivityTime.reduce((p, c)=> +p + +c, 0) + breakTime.reduce((p, c) => +p + +c , 0)
+                  } </span> Min</p>
                 </div>
           </div>
 
 {/* The code of the activity button: */}
-          <button className='activity-done-btn'>Activity completed</button>
+          <button id='complete' onClick={() => showGreeting('complete')} className='activity-done-btn'>Activity completed</button>
+          <button id='again' onClick={() => window.location.reload()} className='try-again-btn'>Click here to try again</button>
      </div>
     </div>
   );

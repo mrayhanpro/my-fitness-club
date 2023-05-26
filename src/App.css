@@ -6,15 +6,14 @@
 }
 
 .cal-cart {
+  background-color: rgb(127, 182, 230);
   padding: 20px;
-  background-image: url(../public/Images/bg.jpg);
-  background-size: cover;
   position: fixed;
   top: 0;
   right: 0;
   width: 260px;
   height: 100%;
-  border-left: 3px solid rgb(54, 54, 135);
+  /* border-left: 2px solid rgb(54, 54, 135); */
 
 
 }
@@ -25,47 +24,47 @@
   height: 80px;
   border-radius: 10px;
   border: 1px solid red;
-  box-shadow: 1px -1px 10px 1px black;
-
-
+  box-shadow: 1px -1px 10px 1px rgb(53, 69, 194);
 }
 
 /* Setting style for the name and tittle */
 .name-n-tittle {
   line-height: 0px;
+  margin-bottom: 25px;
+
 }
 
 /* Setting style for the member related data */
 .member-data {
-  margin-top: 10px;
   border-radius: 5px;
-  padding: 0 10px 0 10px;
+  padding: 0 5px 0 5px;
   display: grid;
   grid-template-columns: auto auto auto;
-  justify-content: space-around;
+  grid-template-rows: 60px;
+  justify-content: center;
   align-items: center;
-  text-align: center;
+  gap: 15px;
 
 }
 .member-data div {
   line-height: 2px;
-  width: 40px;
+  width: 50px;
   height: 40px;
-  border: 1px solid crimson;
+  border: 2px solid rgb(20, 80, 220);
   background-color: rgb(231, 236, 236);
   box-shadow: 1px -1px 10px 1px black;
   border-radius: 5px;
-  padding: 10px;
-  font-size: 14px;
-  
+  font-size: 15px;
+  padding:0 5px 15px 5px ;
+  text-align: center;
 }
 
 
 /* Setting style for the break section */
 
-.break-section-header, .activity-details {
+.break-section-header, .activity-details-header {
   text-align: left;
-  line-height: 8px;
+  line-height: 5px;
 }
 
 .break-data {
@@ -81,7 +80,6 @@
 .break-data * {
   height: 35px;
   border-radius: 50%;
-  border: 1px solid crimson;
   padding: 10px;
   font-weight: bold ;
   background-color: thistle;
@@ -90,52 +88,58 @@
 }
 
 .break-data *:hover {
-  outline: 2px solid red;
+  outline: 2px solid blue;
 }
 
 .break-data p {
-  padding-top: 15px;
-  width: 40px; 
-  font-size: 14px;
-  line-height: 13px; 
+  padding-top: 5px;
+  width: 30px; 
+  font-size: 26px;
+  font-weight: bold;
 }
 
 
 /* Style for activity details section */
 
-.activity-time-data, .break-time-data , .activity-time-data {
-  background-color: thistle;
+.total-activity-time, .total-break-time, .total-need-time{
+  background-color: rgb(196, 143, 196);
   display: grid;
   grid-template-columns: auto auto;
-  justify-content: space-around;
+  grid-template-rows: 30px;
   align-items: center;
   border-radius: 5px;
   font-weight: bold;
-  box-shadow: 1px -1px 10px 1px black;
-  border: 1px solid crimson; 
-}
-
-.time {
-  color: rgb(78, 72, 72);
-}
-
-.total-time {
-  color: blue;
+  box-shadow: 1px -1px 5px 1px black;
+  border: 2px solid rgb(20, 40, 220); 
 }
 
 /* Style for the activity button */
 .activity-done-btn {
-  background-color: green;
-  color: white;
+  background-color: rgb(250, 139, 250) ;
   font-weight: bold;
-  padding: 10px 20px;
+  padding: 8px 15px;
   border-radius: 10px;
   margin: 15px;
   box-shadow: 1px -1px 10px 1px black;
-
+  font-size: 20px;
 }
 
 .activity-done-btn:hover {
-  color: blue;
-  outline: 1px solid blue;
+  outline: 1px solid white;
 }
+
+.try-again-btn {
+  color: blue;
+  background-color: rgb(91, 175, 248);
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 10px;
+  box-shadow: 1px -1px 10px 1px black;
+  font-size: 13px;
+}
+.try-again-btn:hover {
+  outline: 2px solid rgb(75, 177, 141);
+}
+
+
+
