@@ -10,7 +10,7 @@ const Activity = (props) => {
         const element = document.getElementById(id);
         console.log(element);
         element.innerText = "";
-        element.innerText = "Addeded";
+        element.innerText = "Added";
         
     }
 

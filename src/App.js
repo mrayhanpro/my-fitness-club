@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {useState } from 'react';
 import './App.css';
 import ActivityCont from './components/Activity-cont/ActivityCont';
 import Header from './components/Header/Header';
@@ -8,6 +8,7 @@ import man from './man.jpg';
 
 function App() {
 
+  // Declaring the state for the activity dat:
   const [activityData, setActivityData] = useState([]);
   const {time_require} = activityData;
 
@@ -15,8 +16,8 @@ function App() {
     setActivityData(activity)
   }
 
+  // Set break time and its color:
   const setBreakTime = (id) => {  
-   
     const getSelectedBreakTime = document.getElementById(id).innerText;
     document.getElementById(id).style.background = "red";
     document.getElementById(id).style.color = "white";
@@ -26,8 +27,12 @@ function App() {
     breakTimeElementValue.innerText = getSelectedBreakTime;
     return  console.log(id);
   }
+
+
   return (
+
     <div className="App">
+
      <div className="activity-data-cont">
         <Header></Header> 
         <ActivityContHeader></ActivityContHeader>
@@ -37,7 +42,9 @@ function App() {
          ></ActivityCont>
      </div>
 
+{/* The section of Calculation cart: */}
      <div className="cal-cart">
+        {/* code for member and member data: */}
           <div className="member">
               <div ><img src={man} alt="Not found."  /></div>
               <div className='name-n-tittle'>
@@ -59,6 +66,8 @@ function App() {
                   <p><strong>Age</strong></p>
                 </div>
           </div>
+
+          {/* The break time section codes: */}
           <h3 className='break-section-header'>Add a break</h3>
           <div className='break-data'>
                 <p id={1} onClick={ () => setBreakTime(1)}>05 Min</p>
@@ -68,7 +77,9 @@ function App() {
                 <p id={5} onClick={ () => setBreakTime(5)}>25 Min</p>
                 <p id={6} onClick={ () => setBreakTime(6)}>30 Min</p>
           </div>
-              <h3 className='activity-details'>Activity details:</h3>
+
+          {/* The activity details section codes: */}
+              <h3 className='activity-details-header'>Activity details:</h3>
           <div className="activity-details">
                 <div className='activity-time-data'>
                   <p>Activity time:</p>
@@ -86,9 +97,8 @@ function App() {
                 </div>
           </div>
 
+{/* The code of the activity button: */}
           <button className='activity-done-btn'>Activity completed</button>
-
-          
      </div>
     </div>
   );
