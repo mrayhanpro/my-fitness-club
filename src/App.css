@@ -50,8 +50,8 @@
   line-height: 2px;
   width: 50px;
   height: 40px;
-  border: 2px solid rgb(20, 80, 220);
-  background-color: rgb(231, 236, 236);
+  border: 3px solid rgb(5, 76, 242);
+  background-color: #fff;
   box-shadow: 1px -1px 10px 1px black;
   border-radius: 5px;
   font-size: 15px;
@@ -82,7 +82,7 @@
   border-radius: 50%;
   padding: 10px;
   font-weight: bold ;
-  background-color: thistle;
+  background-color: rgb(254, 199, 254);
   box-shadow: 1px -1px 10px 1px black;
   margin: 0;  
 }
@@ -102,7 +102,7 @@
 /* Style for activity details section */
 
 .total-activity-time, .total-break-time, .total-need-time{
-  background-color: rgb(196, 143, 196);
+  background-color: rgb(252, 178, 252);
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: 30px;
@@ -115,7 +115,7 @@
 
 /* Style for the activity button */
 .activity-done-btn {
-  background-color: rgb(250, 139, 250) ;
+  background-color: rgb(247, 65, 247) ;
   font-weight: bold;
   padding: 8px 15px;
   border-radius: 10px;

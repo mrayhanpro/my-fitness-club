@@ -28,10 +28,18 @@ const addBreakTimeAndColor = (id) => {
 
 // Code for showing the greeting for completing selected activities:
 const showGreeting = (id) => {
+  // code for changing the content of the btn and its color:
   const completeActivityBtn = document.getElementById(id);
   completeActivityBtn.style.backgroundColor = 'rgb(185, 248, 91)'
   completeActivityBtn.innerText = '';
   completeActivityBtn.innerText = "Completed!😍";
+
+
+  // code for showing the greetings as toast:
+
+  
+
+
   return console.log("Ok");
 }
 
