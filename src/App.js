@@ -1,4 +1,6 @@
-import {useEffect, useState } from 'react';
+import {React, useState } from 'react';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css' 
 import './App.css';
 import Header from './components/Header/Header';
 import ActivityContHeader from './components/ActivityContHeader/ActivityContHeader';
@@ -34,19 +36,22 @@ const showGreeting = (id) => {
   completeActivityBtn.innerText = '';
   completeActivityBtn.innerText = "Completed!😍";
 
-
-  // code for showing the greetings as toast:
-
+   // code for showing the greetings as toast:
+   const showToastMessege = () => {
+    toast.success("Congratulation! You did it.", { position: toast.POSITION.TOP_CENTER});
+  }
+  showToastMessege();
   
-
-
-  return console.log("Ok");
 }
+
+
+
 
 return (
 
     <div className="App">
       <div className="activity-data-cont">
+        <ToastContainer></ToastContainer>
           <Header></Header> 
           <ActivityContHeader></ActivityContHeader>
           <ActivityCont
