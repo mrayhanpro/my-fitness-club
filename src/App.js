@@ -1,4 +1,4 @@
-import {React, useState } from 'react';
+import {React, useEffect, useState } from 'react';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css' 
 import './App.css';
@@ -11,6 +11,7 @@ function App() {
 // Declaring the state for the activity details section:
   const [requiredActivityTime, setRequiredActivityTime] = useState([]);
   const [breakTime, setBreakTime] = useState([]);
+  const [breakTimeAndIdData, setBreakTimeAndIdData]  = useState([]);
 
 //  for add to list button:
   const handleAddToList = (activity) => {
@@ -26,7 +27,18 @@ const addBreakTimeAndColor = (id) => {
   const SelectedBreakTime = document.getElementById(id).innerText;
   const newBreaktime = [...breakTime, SelectedBreakTime];
   setBreakTime(newBreaktime);
+  addToLocalStorage(id, SelectedBreakTime)
 }
+
+const addToLocalStorage = (breakTimeElementId, breakTime) => {
+  const BreakTimeAndId = {id:breakTimeElementId, time: breakTime};
+  const newBreakTimeAndIdData = [...breakTimeAndIdData, BreakTimeAndId]
+  setBreakTimeAndIdData(newBreakTimeAndIdData);
+}
+
+const breakTimeCart = [...breakTimeAndIdData]
+localStorage.setItem('breakTimeCart', JSON.stringify(breakTimeCart));
+
 
 // Code for showing the greeting for completing selected activities:
 const showGreeting = (id) => {
@@ -41,12 +53,8 @@ const showGreeting = (id) => {
     toast.success("Congratulation! You did it.", { position: toast.POSITION.TOP_CENTER});
   }
   showToastMessege();
-  
+
 }
-
-
-
-
 return (
 
     <div className="App">
