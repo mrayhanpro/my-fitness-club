@@ -1,17 +1,21 @@
 import {React, useEffect, useState } from 'react';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css' 
-import './App.css';
 import Header from './components/Header/Header';
 import ActivityContHeader from './components/ActivityContHeader/ActivityContHeader';
 import ActivityCont from './components/Activity-cont/ActivityCont';
 import man from './man.jpg';
+import { addToDb, getStoredBreakTimeCart } from './components/Utilities/fakeDb';
+import { getActivityTime, getBreakTime, getTotalNeededTime } from './components/Utilities/sum';
+import './App.css';
 
 function App() {
-// Declaring the state for the activity details section:
   const [requiredActivityTime, setRequiredActivityTime] = useState([]);
-  const [breakTime, setBreakTime] = useState([]);
-  const [breakTimeAndIdData, setBreakTimeAndIdData]  = useState([]);
+  const [selectedBreakTime, setSelectedBreakTime] = useState([]);
+  const [selectedBreakTimes, setSelectedBreakTimes] = useState([]);
+
+
+
 
 //  for add to list button:
   const handleAddToList = (activity) => {
@@ -19,26 +23,48 @@ function App() {
     setRequiredActivityTime(newActivityData);
 }
 
+useEffect(() => {
+        const requiredTimeElement = document.getElementById("required-activity-time");
+        requiredTimeElement.innerText = '';
+        requiredTimeElement.innerText =  requiredActivityTime.reduce((p, c)=> +p + +c, 0);
+}, [requiredActivityTime])
+
+
+useEffect(() => {
+  const breakTimeElement = document.getElementById('break-time');
+    const breakTimeText = breakTimeElement.innerText;
+    const convertedBreakTimeText = +breakTimeText;
+    breakTimeElement.innerText = convertedBreakTimeText + +selectedBreakTime ;
+} ,[selectedBreakTime])
+
+useEffect(() => {
+  let totalBreakTimes = 0;
+  const storedCart = getStoredBreakTimeCart();
+  for(const id in storedCart ) {
+   const element = document.getElementById(id);
+   element.style.backgroundColor = "blue";
+   element.style.color = "white";
+  const breakTimeElement = document.getElementById('break-time');
+  breakTimeElement.innerText =  '';
+  totalBreakTimes  = +totalBreakTimes + +storedCart[id];
+  setSelectedBreakTimes(totalBreakTimes);
+  breakTimeElement.innerText =  selectedBreakTimes;
+  }
+}, [selectedBreakTimes])
+
 // Code for adding break time and its color:
 const addBreakTimeAndColor = (id) => {
   const getSelectedBreakTimeElement = document.getElementById(id);
   getSelectedBreakTimeElement.style.backgroundColor = 'blue'
   getSelectedBreakTimeElement.style.color = 'white';
   const SelectedBreakTime = document.getElementById(id).innerText;
-  const newBreaktime = [...breakTime, SelectedBreakTime];
-  setBreakTime(newBreaktime);
-  addToLocalStorage(id, SelectedBreakTime)
+  setSelectedBreakTime(SelectedBreakTime);
+  addToLocalStorage(id, SelectedBreakTime);
 }
 
 const addToLocalStorage = (breakTimeElementId, breakTime) => {
-  const BreakTimeAndId = {id:breakTimeElementId, time: breakTime};
-  const newBreakTimeAndIdData = [...breakTimeAndIdData, BreakTimeAndId]
-  setBreakTimeAndIdData(newBreakTimeAndIdData);
+      addToDb(breakTimeElementId, breakTime)
 }
-
-const breakTimeCart = [...breakTimeAndIdData]
-localStorage.setItem('breakTimeCart', JSON.stringify(breakTimeCart));
-
 
 // Code for showing the greeting for completing selected activities:
 const showGreeting = (id) => {
@@ -56,7 +82,6 @@ const showGreeting = (id) => {
 
 }
 return (
-
     <div className="App">
       <div className="activity-data-cont">
         <ToastContainer></ToastContainer>
@@ -65,7 +90,7 @@ return (
           <ActivityCont
               handleAddToList={handleAddToList}
           ></ActivityCont>
-      </div>
+    </div>
 
 {/* The section of Calculation cart: */}
      <div className="cal-cart">
@@ -92,41 +117,33 @@ return (
                 </div>
           </div>
 
-          {/* The break time section codes: */}
-          <h3 className='break-section-header'>Add a break (Min):</h3>
-          <div className='break-data'>
-                <p id='a' onClick={() =>addBreakTimeAndColor('a')}> 05 </p>
-                <p id='b' onClick={() =>addBreakTimeAndColor('b')}> 10 </p>
-                <p id='c' onClick={() =>addBreakTimeAndColor("c")}> 15 </p>
-                <p id='d' onClick={() =>addBreakTimeAndColor('d')}> 20 </p>
-                <p id='e' onClick={() =>addBreakTimeAndColor('e')}> 25 </p>
-                <p id='f' onClick={() =>addBreakTimeAndColor('f')}> 30 </p>
-          </div>
+        {/* The break time section codes: */}
+        <h3 className='break-section-header'>Add a break (Min):</h3>
+        <div className='break-data'>
+              <p id='a' onClick={() =>addBreakTimeAndColor('a')}> 05 </p>
+              <p id='b' onClick={() =>addBreakTimeAndColor('b')}> 10 </p>
+              <p id='c' onClick={() =>addBreakTimeAndColor("c")}> 15 </p>
+              <p id='d' onClick={() =>addBreakTimeAndColor('d')}> 20 </p>
+              <p id='e' onClick={() =>addBreakTimeAndColor('e')}> 25 </p>
+              <p id='f' onClick={() =>addBreakTimeAndColor('f')}> 30 </p>
+        </div>
 
           {/* The activity details section codes: */}
               <h3 className='activity-details-header'>Activity details:</h3>
           <div className="activity-details">
                 <div className='total-activity-time'>
                   <p>Required time =</p>
-                  <p  className='time'><span id='required-activity-time'>{
-                  
-                         requiredActivityTime.reduce((p, c)=> +p + +c, 0)
-      
-                  }</span> Min</p>
+                  <p  className='time'><span id='required-activity-time'></span> Min</p>
                 </div>
                 <br />
                 <div className='total-break-time'>
                   <p> Break time =</p>
-                  <p  className='time'> <span id='break-time'>{
-                      breakTime.reduce((p, c) => +p + +c , 0)
-                  }</span> Min</p>
+                  <p  className='time'> <span id='break-time'>0</span> Min</p>
                 </div>
                 <br />
                 <div className='total-need-time'>
                   <p> <span className='total-time-tittle'>Total needed time</span>: </p>
-                  <p className='time'><span id='total-time'> {
-                             requiredActivityTime.reduce((p, c)=> +p + +c, 0) + breakTime.reduce((p, c) => +p + +c , 0)
-                  } </span> Min</p>
+                  <p className='time'><span id='total-time'>0</span> Min</p>
                 </div>
           </div>
 
