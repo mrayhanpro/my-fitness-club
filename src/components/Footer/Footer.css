@@ -1,0 +1,38 @@
+.footer {
+    background-color: rgb(66, 205, 255);
+    text-align: center;
+}
+.footer h1 {
+    margin: 0;
+}
+
+
+
+.qna {
+    text-align: start;
+    margin-left: 20px;
+    display: flex;
+    margin: 20px;
+}
+
+
+.qna div {
+    background-color: rgb(136, 136, 255);
+    border: 1px solid black;
+    border-radius:  10px;
+    margin: 10px;
+    padding: 20px;
+    width: 30%;
+    height: 250px;
+    
+}
+
+.qna div * {
+    margin: 0;
+}
+.qna div h3 {
+  color: orange;
+}
+.qna div h4 {
+  color: rgb(15, 230, 15);
+}

@@ -6,16 +6,14 @@ import ActivityContHeader from './components/ActivityContHeader/ActivityContHead
 import ActivityCont from './components/Activity-cont/ActivityCont';
 import man from './man.jpg';
 import { addToDb, getStoredBreakTimeCart } from './components/Utilities/fakeDb';
-import { getActivityTime, getBreakTime, getTotalNeededTime } from './components/Utilities/sum';
 import './App.css';
+import Footer from './components/Footer/Footer';
+import EndCompo from './components/EndCompo/EndCompo';
 
 function App() {
   const [requiredActivityTime, setRequiredActivityTime] = useState([]);
   const [selectedBreakTime, setSelectedBreakTime] = useState([]);
   const [selectedBreakTimes, setSelectedBreakTimes] = useState([]);
-
-
-
 
 //  for add to list button:
   const handleAddToList = (activity) => {
@@ -28,7 +26,6 @@ useEffect(() => {
         requiredTimeElement.innerText = '';
         requiredTimeElement.innerText =  requiredActivityTime.reduce((p, c)=> +p + +c, 0);
 }, [requiredActivityTime])
-
 
 useEffect(() => {
   const breakTimeElement = document.getElementById('break-time');
@@ -83,7 +80,8 @@ const showGreeting = (id) => {
 }
 return (
     <div className="App">
-      <div className="activity-data-cont">
+  <div className="container">
+          <div className="activity-data-cont">
         <ToastContainer></ToastContainer>
           <Header></Header> 
           <ActivityContHeader></ActivityContHeader>
@@ -147,10 +145,13 @@ return (
                 </div>
           </div>
 
-{/* The code of the activity button: */}
+          {/* The code of the activity button: */}
           <button id='complete' onClick={() => showGreeting('complete')} className='activity-done-btn'>Activity completed</button>
           <button id='again' onClick={() => window.location.reload()} className='try-again-btn'>Click here to try again</button>
      </div>
+          </div>
+          <Footer></Footer>
+          <EndCompo></EndCompo>
     </div>
   );
 }

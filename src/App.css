@@ -1,4 +1,4 @@
-.App{
+.container{
   text-align: center;
   display: grid;
   grid-template-columns: 7fr 2fr;
@@ -8,11 +8,10 @@
 .cal-cart {
   background-color: rgb(127, 182, 230);
   padding: 20px;
-  position: fixed;
+  position: sticky;
   top: 0;
   right: 0;
   width: 260px;
-  height: 100%;
   /* border-left: 2px solid rgb(54, 54, 135); */
 
 
