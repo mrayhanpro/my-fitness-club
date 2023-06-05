@@ -12,7 +12,7 @@
     text-align: start;
     margin-left: 20px;
     display: flex;
-    margin: 20px;
+    padding: 20px;
 }
 
 
@@ -23,7 +23,7 @@
     margin: 10px;
     padding: 20px;
     width: 30%;
-    height: 250px;
+    height: 400px;
     
 }
 

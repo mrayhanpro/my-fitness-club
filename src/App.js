@@ -14,6 +14,7 @@ function App() {
   const [requiredActivityTime, setRequiredActivityTime] = useState([]);
   const [selectedBreakTime, setSelectedBreakTime] = useState([]);
   const [selectedBreakTimes, setSelectedBreakTimes] = useState([]);
+  console.log(selectedBreakTimes);
 
 //  for add to list button:
   const handleAddToList = (activity) => {
@@ -70,6 +71,7 @@ const showGreeting = (id) => {
   completeActivityBtn.style.backgroundColor = 'rgb(185, 248, 91)'
   completeActivityBtn.innerText = '';
   completeActivityBtn.innerText = "Completed!😍";
+
 
    // code for showing the greetings as toast:
    const showToastMessege = () => {
@@ -147,7 +149,9 @@ return (
 
           {/* The code of the activity button: */}
           <button id='complete' onClick={() => showGreeting('complete')} className='activity-done-btn'>Activity completed</button>
-          <button id='again' onClick={() => window.location.reload()} className='try-again-btn'>Click here to try again</button>
+          <button id='again' onClick={() => {
+            window.location.reload()
+            localStorage.removeItem('breakTimeCart')} }className='try-again-btn'>Click here to try again</button>
      </div>
           </div>
           <Footer></Footer>

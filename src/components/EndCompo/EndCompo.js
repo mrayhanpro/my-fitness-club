@@ -4,7 +4,7 @@ import './EndCompo.css'
 const EndCompo = () => {
     return (
         <div className='end-compo'>
-            <h1>This is the endCompo to this project.</h1>
+            <h1>This is the endCompo of  this project.</h1>
         </div>
     );
 };
